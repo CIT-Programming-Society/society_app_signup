@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
+import 'IconLogo.dart';
 
 void main() => runApp(MyApp());
 
@@ -92,40 +93,5 @@ class Counter with ChangeNotifier {
   void decrement() {
     _counter--;
     notifyListeners();
-  }
-}
-
-class IconLogo extends StatelessWidget {
-  
-  @override 
-  Widget build(BuildContext context){
-    final screenWidth = MediaQuery.of(context).size.width;
-
-    return Card(
-      elevation: 5,
-      color: Colors.green,      // <== doesn't show up
-      shape: CircleBorder(
-        side: BorderSide(
-          color: Colors.deepPurple,    // TODO : to change to the backgroung color of the app
-          width: screenWidth / 50.0    // to tweak between this width and the border of the BoxDecoration
-        )
-      ),
-      child: Container(
-        // color: Colors.blue,        // <== CRASHES the app, the container can't have decoration and a color
-        width: screenWidth / 2.5,     // 1/2.5 of screen width
-        height: screenWidth / 2.5,    // <== required
-        padding: EdgeInsets.all(3),
-        decoration: BoxDecoration(
-          border: Border.all(width: screenWidth/50.0),
-          color: Colors.grey.shade200, 
-          shape: BoxShape.circle,
-          image: DecorationImage(
-            fit: BoxFit.cover, // optional in our case
-            // the original image has to be modified in order to get a thiner border
-            image: AssetImage('assets/officiallogo.png')
-          )
-        ),
-      ),
-    );
   }
 }
