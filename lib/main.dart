@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
+import 'package:society_app_signup/Components/IconLogo.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,13 +12,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
       ),
       home: ChangeNotifierProvider<Counter>(
         builder: (_) => Counter(0),
         child: Consumer<Counter>(
-          builder: (context, counter, _){
+          builder: (context, counter, _) {
             return MyHomePage(title: 'Flutter Demo Home Page');
           },
         ),
@@ -35,17 +36,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     final _counter = Provider.of<Counter>(context);
 
     return Scaffold(
-      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            IconLogo(),
             Text(
               'You have pushed the button this many times:',
             ),
@@ -56,39 +56,41 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-        floatingActionButton: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            FloatingActionButton(
-              onPressed: () => Provider.of<Counter>(context, listen: false).increment(),
-              tooltip: 'Increment',
-              child: Icon(Icons.add),
-            ),
-            SizedBox(height: 10),
-            FloatingActionButton(
-              onPressed: () => Provider.of<Counter>(context, listen: false).decrement(),
-              tooltip: 'Increment',
-              child: Icon(Icons.remove),
-            )
-          ],
-        ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          FloatingActionButton(
+            onPressed: () =>
+              Provider.of<Counter>(context, listen: false).increment(),
+            tooltip: 'Increment',
+            child: Icon(Icons.add),
+          ),
+          SizedBox(height: 10),
+          FloatingActionButton(
+            onPressed: () =>
+              Provider.of<Counter>(context, listen: false).decrement(),
+            tooltip: 'Increment',
+            child: Icon(Icons.remove),
+          )
+        ],
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
 
-class Counter with ChangeNotifier{
+class Counter with ChangeNotifier {
   int _counter;
 
   Counter(this._counter);
   get counter => this._counter;
   set counter(int counter) => this._counter = counter;
 
-  void increment(){
+  void increment() {
     _counter++;
     notifyListeners();
   }
 
-  void decrement(){
+  void decrement() {
     _counter--;
     notifyListeners();
   }
