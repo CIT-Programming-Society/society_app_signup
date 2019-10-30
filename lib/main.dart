@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
-import 'IconLogo.dart';
+import 'package:society_app_signup/Components/IconLogo.dart';
 
 void main() => runApp(MyApp());
 
