@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
@@ -43,35 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
-              width: 300.0,//MediaQuery.of(context).size.width / 3,     // 1/3 of screen width
-              height: 300.0, //MediaQuery.of(context).size.width / 3,
-              // decoration: BoxDecoration(
-              //   border: Border.all(width:10.0),
-              //   color: Colors.black, // todo: Change To White
-              //   shape: BoxShape.circle,
-              //   image: DecorationImage(
-              //     fit: BoxFit.cover, // optional in our case
-              //     // the original image has to be modified in order to get a thiner border
-              //     image: AssetImage('assets/officiallogo.png')
-              //   )
-              // ),
-              child: Material(
-                shape: CircleBorder(
-                  side: BorderSide(
-                    //color: new ThemeData().dialogBackgroundColor,
-                    color: Colors.black,  // todo : to change to the backgroung color 
-                    width: 17.0           // 17 for 300 // 5 or 6 for 100
-                  )
-                ),
-                color: Colors.white,
-                child: Image.asset('assets/officiallogo.png'),
-              ),
-              // child: CircleAvatar(
-              //   backgroundColor: Colors.black,
-              //   backgroundImage: AssetImage('assets/officiallogo.png'),
-              // ),
-            ),
+            IconLogo(),
             Text(
               'You have pushed the button this many times:',
             ),
@@ -119,5 +92,40 @@ class Counter with ChangeNotifier {
   void decrement() {
     _counter--;
     notifyListeners();
+  }
+}
+
+class IconLogo extends StatelessWidget {
+  
+  @override 
+  Widget build(BuildContext context){
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    return Card(
+      elevation: 5,
+      color: Colors.green,      // <== doesn't show up
+      shape: CircleBorder(
+        side: BorderSide(
+          color: Colors.deepPurple,    // TODO : to change to the backgroung color of the app
+          width: screenWidth / 50.0    // to tweak between this width and the border of the BoxDecoration
+        )
+      ),
+      child: Container(
+        // color: Colors.blue,        // <== CRASHES the app, the container can't have decoration and a color
+        width: screenWidth / 2.5,     // 1/2.5 of screen width
+        height: screenWidth / 2.5,    // <== required
+        padding: EdgeInsets.all(3),
+        decoration: BoxDecoration(
+          border: Border.all(width: screenWidth/50.0),
+          color: Colors.grey.shade200, 
+          shape: BoxShape.circle,
+          image: DecorationImage(
+            fit: BoxFit.cover, // optional in our case
+            // the original image has to be modified in order to get a thiner border
+            image: AssetImage('assets/officiallogo.png')
+          )
+        ),
+      ),
+    );
   }
 }
