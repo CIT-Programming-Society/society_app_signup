@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:society_app_signup/Components/Home.dart';
 import 'package:society_app_signup/DataClasses/Counter.dart';
 import 'package:society_app_signup/Styling/AppTheme.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -10,9 +12,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: appTheme(),
+      debugShowCheckedModeBanner: false,
+      title: "Society App Prototype",
       home: ChangeNotifierProvider<Counter>(
         builder: (_) => Counter(0),
         child: Consumer<Counter>(
