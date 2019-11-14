@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:society_app_signup/Components/Divider.dart';
 import 'package:society_app_signup/Components/IconLogo.dart';
 import 'package:society_app_signup/DataClasses/Counter.dart';
 
@@ -56,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           .textTheme
                           .subtitle
                           .copyWith(fontSize: instance.setSp(16))),
+                  DoubleDivider(),
                 ],
               ),
             ),
