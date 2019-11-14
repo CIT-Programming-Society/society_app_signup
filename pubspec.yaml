@@ -26,10 +26,17 @@ dependencies:
   provider: ^3.1.0
   firebase_core: ^0.4.0+9
   flutter_screenutil: ^0.6.0
+  slider_button: ^0.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.7.3"
+
+flutter_icons:
+  android: "launcher_icon" 
+  ios: true
+  image_path: "assets/officiallogo.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -47,6 +54,8 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - assets/officiallogo.png
+    - assets/google_icon.png
+    - assets/email_icon.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

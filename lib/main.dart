@@ -3,8 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:society_app_signup/Components/Home.dart';
 import 'package:society_app_signup/DataClasses/Counter.dart';
 import 'package:society_app_signup/Styling/AppTheme.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 void main() => runApp(MyApp());
 
