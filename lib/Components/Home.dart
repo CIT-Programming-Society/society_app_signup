@@ -58,7 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           .textTheme
                           .subtitle
                           .copyWith(fontSize: instance.setSp(16))),
-                  DoubleDivider(),
                 ],
               ),
             ),
@@ -71,6 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 actionFunction: () => print("Wow")
               ),
             ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  instance.setWidth(35), instance.setHeight(10), 0, 0),
+              child:  DoubleDivider(),
+            ),
+
             Padding(
               padding: EdgeInsets.fromLTRB(
                   instance.setWidth(35), instance.setHeight(25), 0, 0),

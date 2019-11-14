@@ -8,9 +8,6 @@ class DoubleDivider extends StatelessWidget{
     final instance = ScreenUtil.getInstance();
     return Row(
       children: <Widget>[
-        Padding(
-                    padding: EdgeInsets.all(2),
-                  ),
         Expanded(
             child: Divider(
               color: Colors.grey.shade100,
