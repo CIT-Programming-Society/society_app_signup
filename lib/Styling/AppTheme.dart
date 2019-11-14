@@ -25,5 +25,10 @@ TextTheme textTheme() {
       fontSize: 16,
       wordSpacing: -0.5,
     ),
+    display1: TextStyle(
+      fontWeight: FontWeight.bold,
+      color: Colors.grey.shade800,
+      fontSize: 18,
+    ),
   );
 }

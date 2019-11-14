@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:society_app_signup/Components/Divider.dart';
 import 'package:society_app_signup/Components/IconLogo.dart';
+import 'package:society_app_signup/Components/SignUpButton.dart';
 import 'package:society_app_signup/DataClasses/Counter.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -61,6 +62,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  instance.setWidth(35), instance.setHeight(50), 0, 0),
+              child: SignUpButton(
+                buttonText: 'Slide to Continue with Google',
+                iconPath: 'assets/google_icon.png',
+                actionFunction: () => print("Wow")
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  instance.setWidth(35), instance.setHeight(25), 0, 0),
+              child: SignUpButton(
+                buttonText: 'Slide to Continue with Email',
+                iconPath: 'assets/email_icon.png',
+                actionFunction: () => print("Wow"),
+              ),
+            )
           ],
         ),
       ),
