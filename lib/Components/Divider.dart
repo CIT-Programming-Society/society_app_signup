@@ -13,6 +13,7 @@ class DoubleDivider extends StatelessWidget{
           Expanded(
             child: Divider(
               color: Colors.grey.shade100,
+              height: instance.setHeight(1)
             ),
           ),
           Padding(
@@ -28,6 +29,7 @@ class DoubleDivider extends StatelessWidget{
           Expanded(
             child: Divider(
               color: Colors.grey.shade300,
+              height: instance.setHeight(1)
             )
           ),
         ]
