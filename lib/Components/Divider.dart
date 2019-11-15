@@ -6,35 +6,32 @@ class DoubleDivider extends StatelessWidget{
   @override 
   Widget build(BuildContext context){
     final instance = ScreenUtil.getInstance();
-    return Row(
-      children: <Widget>[
-        Expanded(
+    return Container(
+      width: instance.setWidth(320),   
+      child: Row(
+        children: <Widget>[
+          Expanded(
             child: Divider(
               color: Colors.grey.shade100,
             ),
-            
-        ),
-        Padding(
-                    padding: EdgeInsets.fromLTRB(0,
-                  instance.setHeight(20), instance.setWidth(10), instance.setHeight(20)),
-                  ),
-        Text("OR",
-          style: Theme.of(context)
-                          .textTheme
-                          .subtitle
-                          .copyWith(fontSize: instance.setSp(16), fontWeight: FontWeight.bold)
-        ),        
-        Padding(
-                    padding: EdgeInsets.fromLTRB(0,
-                  instance.setHeight(20), instance.setWidth(10), instance.setHeight(20)),
-                  ),
-        Expanded(
+          ),
+          Padding(
+              padding: EdgeInsets.fromLTRB(instance.setWidth(10),
+            0, instance.setWidth(10), 0),
+            child: Text("or",
+              style: Theme.of(context)
+                            .textTheme
+                            .subtitle
+                            .copyWith(fontSize: instance.setSp(16), fontWeight: FontWeight.bold)
+            ),        
+          ),
+          Expanded(
             child: Divider(
-              color: Colors.grey.shade100,
+              color: Colors.grey.shade300,
             )
-        ),
-      ]
-    );
+          ),
+        ]
+      )
+    ); 
   }
-
 }

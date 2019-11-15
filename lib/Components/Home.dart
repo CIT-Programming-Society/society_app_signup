@@ -67,22 +67,23 @@ class _MyHomePageState extends State<MyHomePage> {
               child: SignUpButton(
                 buttonText: 'Slide to Continue with Google',
                 iconPath: 'assets/google_icon.png',
-                actionFunction: () => print("Wow")
+                actionFunction: () => print("WowoW")
               ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(
-                  instance.setWidth(35), instance.setHeight(10), 0, 0),
-              child:  DoubleDivider(),
+                  0, instance.setHeight(25), 0, instance.setHeight(0)),
+                  child: Center(
+                    child:  DoubleDivider(),
+                  ),
             ),
-
             Padding(
               padding: EdgeInsets.fromLTRB(
                   instance.setWidth(35), instance.setHeight(25), 0, 0),
               child: SignUpButton(
                 buttonText: 'Slide to Continue with Email',
                 iconPath: 'assets/email_icon.png',
-                actionFunction: () => print("Wow"),
+                actionFunction: () => print("WoOow"),
               ),
             )
           ],
