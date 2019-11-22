@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(instance.setWidth(40),
-                  instance.setHeight(80) + ScreenUtil.statusBarHeight, 0, 0),
+                  instance.setHeight(80) , 0, 0),
               child: IconLogo(),
             ),
             Padding(
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.all(2),
                   ),
                   Text(
-                      'By signing up you are marking down attendence\nto our focus testing',
+                      'By signing up you are marking down attendence to our focus testing',
                       style: Theme.of(context)
                           .textTheme
                           .subtitle
