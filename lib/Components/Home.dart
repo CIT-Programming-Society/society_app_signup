@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:society_app_signup/Components/Divider.dart';
 import 'package:society_app_signup/Components/IconLogo.dart';
 import 'package:society_app_signup/Components/SignUpButton.dart';
 import 'package:society_app_signup/DataClasses/Counter.dart';
@@ -33,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.fromLTRB(instance.setWidth(40),
-                  instance.setHeight(80) + ScreenUtil.statusBarHeight, 0, 0),
+                  instance.setHeight(80) , 0, 0),
               child: IconLogo(),
             ),
             Padding(
@@ -52,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.all(2),
                   ),
                   Text(
-                      'By signing up you are marking down attendence\nto our focus testing',
+                      'By signing up you are marking down attendence to our focus testing',
                       style: Theme.of(context)
                           .textTheme
                           .subtitle
@@ -66,8 +67,15 @@ class _MyHomePageState extends State<MyHomePage> {
               child: SignUpButton(
                 buttonText: 'Slide to Continue with Google',
                 iconPath: 'assets/google_icon.png',
-                actionFunction: () => print("Wow")
+                actionFunction: () => print("WowoW")
               ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                  0, instance.setHeight(25), 0, instance.setHeight(0)),
+                  child: Center(
+                    child:  DoubleDivider(),
+                  ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(
@@ -75,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: SignUpButton(
                 buttonText: 'Slide to Continue with Email',
                 iconPath: 'assets/email_icon.png',
-                actionFunction: () => print("Wow"),
+                actionFunction: () => print("WoOow"),
               ),
             )
           ],
